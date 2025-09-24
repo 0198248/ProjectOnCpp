@@ -30,7 +30,7 @@ int main() {
 	cout << "Довжина дiагоналi: " << sqrt(pow(geo1, 2) + pow(geo2, 2)) << endl; //обчислення діагоналі прямокутника
 
 	geo1 += geo2;
-	cout << "сума сторiн: " << geo1 << endl;
+	cout << "сума сторiн: " << geo1 << endl; //обчислення суми сторін
 
-	return 0;
+	return 0; 
 }
