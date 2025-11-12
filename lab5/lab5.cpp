@@ -24,23 +24,35 @@ void openMenu(int PINn, int balance) {
 		openMenu(PINn, balance);
 		break;
 	case 2:
+		depos:
 		int deposit;
 		cout << "the amount you want to deposit: ";
 		cin >> deposit;
 		cout << endl;
-		balance += deposit;
+		if (deposit > 0)
+			balance += deposit;
+		else {
+			cout << "wrong number" << endl;
+			goto depos;
+		}
 		openMenu(PINn, balance);
 		break;
 	case 3:
 		int withdraw;
+		with1:
 		cout << "the amount you want to withdraw: ";
 		cin >> withdraw;
 		cout << endl;
 
 		if (balance > withdraw)
-			balance -= withdraw;
+			if (withdraw > 0)
+				balance -= withdraw;
+			else {
+				cout << "wrong number" << endl;
+				goto with1;
+			}
 		else
-			cout << "Your balance is too low" << endl << endl;
+			cout << "Your balance is too low" << endl;
 		openMenu(PINn, balance);
 		break;
 	case 4:
