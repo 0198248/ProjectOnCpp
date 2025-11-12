@@ -11,6 +11,8 @@ void openMenu(int PINn, int balance) {
 	cout << ">> deposit funds (2)" << endl;
 	cout << ">> withdraw funds (3)" << endl;
 	cout << ">> log out (4)" << endl;
+	actionC:
+
 	cout << "choose action: ";
 	int action;
 	cin >> action;
@@ -25,7 +27,7 @@ void openMenu(int PINn, int balance) {
 		int deposit;
 		cout << "the amount you want to deposit: ";
 		cin >> deposit;
-		cout << endl ;
+		cout << endl;
 		balance += deposit;
 		openMenu(PINn, balance);
 		break;
@@ -43,6 +45,10 @@ void openMenu(int PINn, int balance) {
 		break;
 	case 4:
 		PIN(PINn, balance);
+		break;
+	default:
+		cout << "error (enter the number (1-4))" << endl;
+		goto actionC;
 		break;
 	}
 }
